@@ -1,0 +1,28 @@
+﻿<Window x:Class="dm.View.Window.Administrator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dm.View.Window"
+        mc:Ignorable="d"
+        Title="Окно администртора" MinHeight="720" MinWidth="1280" Height="900" Width="1600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+       
+            <Button x:Name="AddEditUserBtn" Content="Добавить/ изменить пользователя"
+                    HorizontalAlignment="Left" 
+                    Click="AddEditUserBtn_Click"/>
+        <ListView x:Name="UsersLv" Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Login}" Header="Логин"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding IsBlocked}" Header="Блокировка"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
