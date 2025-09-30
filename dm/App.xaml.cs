@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dm.model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -12,6 +13,9 @@ namespace dm
     /// Логика взаимодействия для App.xaml
     /// </summary>
     public partial class App : Application
-    {
+    {//Поле для хранения текущего пользователя
+        public static User currentUser = new User();
+        //Контекст данных
+        public static user7Entities context = new user7Entities();
     }
 }
